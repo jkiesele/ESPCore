@@ -1,4 +1,19 @@
 {
-  "name": "ESPCore",
-  "version": "1.0.0",
+  "name":        "ESPCore",
+  "version":     "1.0.0",
+  "description": "Core utilities for my ESP projects.",
+  "keywords":    ["logging","core"],
+  "authors": [
+    { "name": "Jan Kieseler", "maintainer": true }
+  ],
+  "repository": {
+    "type": "git",
+    "url":  "https://github.com/jkiesele/ESPCore.git"
+  },
+  "platforms": ["espressif32","espressif8266"],
+  "frameworks": ["arduino"],
+  "build": {
+    "includeDir": ".",     
+    "srcFilter": ["+<*.h>", "+<*.cpp>"]
+  }
 }
