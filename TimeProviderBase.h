@@ -11,6 +11,7 @@ public:
     
     virtual uint32_t getUnixTime()  = 0;
     virtual uint32_t getUnixUTCTime(uint32_t localTime=0)=0;
+    virtual String getFormattedTime() = 0;
 };
 
 //just uses millis()
@@ -24,6 +25,9 @@ public:
     
     uint32_t getUnixUTCTime(uint32_t localTime=0) override {
         return localTime;
+    }
+    String getFormattedTime() override {
+        return String(millis()/1000);
     }
 };
 
