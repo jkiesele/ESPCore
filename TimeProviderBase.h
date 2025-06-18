@@ -32,6 +32,11 @@ public:
         return String(millis()/1000);
     }
 
+    int getSecondsOfDay() override { //wraps at 24h
+        int secs = millis() / 1000;
+        return secs % 86400; // 24 * 60 * 60
+    }
+
 };
 
 extern TimeProviderBase* gTimeProvider;
