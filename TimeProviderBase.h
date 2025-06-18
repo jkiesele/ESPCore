@@ -12,6 +12,8 @@ public:
     virtual uint32_t getUnixTime()  = 0;
     virtual uint32_t getUnixUTCTime(uint32_t localTime=0)=0;
     virtual String getFormattedTime() = 0;
+
+    virtual int getSecondsOfDay() = 0;
 };
 
 //just uses millis()
@@ -29,6 +31,7 @@ public:
     String getFormattedTime() override {
         return String(millis()/1000);
     }
+
 };
 
 extern TimeProviderBase* gTimeProvider;
